@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "06c5fc7d-3e63-4b29-817e-f56b86f33f4b",
+		"name": "CRUD UNIVATES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22825575"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"usuario\":\"teste\",\r\n        \"senha\":\"123456\"\r\n    \r\n    }\r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/login",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nome\":\"teste\",\r\n        \"email\":\"123456\",\r\n        \"data_nascimento\":\"2023-09-18\",\r\n        \"telefone\":\"123456\",\r\n        \"access_token\" : \"CI1JI6yGnhzJOIs9VcIUeIJpi5iRkINXCicb.NROZiZtCjMW2FJLwwIxJmi0W2YHQDfdbIIiYioTIjtxJypzileyiikMIb8ZJWIS3avOl64.rsYu9jUEfU-mcT9beH6N8o0nrvsB_SJVuu_kt-n3Mtk\"\r\n}\r\n\r\n    \r\n    \r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/create",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nome\":\"teste_update\",\r\n        \"email\":\"123456\",\r\n        \"data_nascimento\":\"2023-09-18\",\r\n        \"telefone\":\"123456\",\r\n        \"access_token\" : \"CI1JI6yGnhzJOIs9VcIUeIJpi5iRkINXCicb.NROZiZtCjMW2FJLwwIxJmi0W2YHQDfdbIIiYioTIjtxJypzileyiikMIb8ZJWIS3avOl64.rsYu9jUEfU-mcT9beH6N8o0nrvsB_SJVuu_kt-n3Mtk\",\r\n        \"id\" : \"1\"\r\n}\r\n\r\n    \r\n    \r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/update",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n        \"access_token\" : \"CI1JI6yGnhzJOIs9VcIUeIJpi5iRkINXCicb.NROZiZtCjMW2FJLwwIxJmi0W2YHQDfdbIIiYioTIjtxJypzileyiikMIb8ZJWIS3avOl64.rsYu9jUEfU-mcT9beH6N8o0nrvsB_SJVuu_kt-n3Mtk\"\r\n}\r\n\r\n    \r\n    \r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/get",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

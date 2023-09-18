@@ -1,0 +1,53 @@
+{
+    "name": "crud/web",
+    "version" : "1.0.0",
+    "description": "Tarefa: Praticando Comunicação Cliente-Servidor",
+    "type": "project",
+    "license": "2023 Bruno Camara dos Santos",
+    "authors": [
+        {
+            "name": "Bruno Camara dos Santos",
+            "email": "bruno.santos2@universo.univates.br"
+        }
+    ],
+    "require": {
+        "adodb/adodb-php" : "5.21.3",
+        "james-heinrich/phpthumb" : "*",
+        "econea/nusoap" : "*",
+        "zendframework/zend-soap" : "*",
+        "ext-json": "*",
+        "respect/validation": "^1.1",
+        "stefangabos/zebra_pagination": "^2.3",
+        "ext-curl": "*",
+        "ext-simplexml": "*",
+        "guzzlehttp/guzzle": "^7.0",
+        "illuminate/pagination": "^8.83",
+        "illuminate/database": "^8.83.27",
+        "php-http/httplug": "^2.4"
+    },
+    "autoload":{
+        "files": [
+            "config.php"
+        ],
+        "psr-4":{
+            "crud\\" : "classes/",
+            "crudController\\" : "src/Infra/Controllers/",
+            "crudRepositories\\" : "src/Domain/Repositories/",
+            "crudServices\\" : "src/Domain/Services/",
+            "crudApplication\\" : "src/Application/",
+            "crudEntities\\" : "src/Domain/Entities/",
+            "crudMiddleware\\" : "src/Infra/Controllers/Middleware/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+        
+    },
+     "autoload-dev":{
+        "psr-4":{
+            "Tests\\" : "tests/"
+        }
+    }
+
+
+}
