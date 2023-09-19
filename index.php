@@ -107,6 +107,31 @@ switch( $endpoint) {
                     $data = json_encode(["message"=>'Erro ao obter lista de pessoas']);
                     echo ($data);
                     break;
+
+                    case 'delete':
+                        $input = (array) json_decode(file_get_contents('php://input'), true);
+                        $auth = new Authenticate();
+                        $tokenCheck = $auth->checkToken($input['access_token']);
+            
+                        if(!$tokenCheck){
+                            $data = json_encode(["message"=>'Não autorizado']);
+                            echo ($data);
+                        }
+            
+                        $personRepository = new PersonRepository();
+                        $deletePerson = $personRepository->delete($input);
+            
+                        if( $deletePerson){
+                            $data = json_encode(["message"=>'Sucesso ao atualizar dados']);
+                            echo ($data);
+                            break;
+                        }
+            
+            
+                        $data = json_encode(["message"=>'Erro ao atualizar dados']);
+                        echo ($data);
+                        break;
+        
     
     default:
         header('HTTP/1.1 404 Not Found');

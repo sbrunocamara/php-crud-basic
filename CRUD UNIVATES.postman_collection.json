@@ -125,6 +125,36 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n        \"access_token\" : \"CI1JI6yGnhzJOIs9VcIUeIJpi5iRkINXCicb.NROZiZtCjMW2FJLwwIxJmi0W2YHQDfdbIIiYioTIjtxJypzileyiikMIb8ZJWIS3avOl64.rsYu9jUEfU-mcT9beH6N8o0nrvsB_SJVuu_kt-n3Mtk\",\r\n        \"id\":5\r\n}\r\n\r\n    \r\n    \r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "10.10.90.15:8080/delete",
+					"host": [
+						"10",
+						"10",
+						"90",
+						"15"
+					],
+					"port": "8080",
+					"path": [
+						"delete"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

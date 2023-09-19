@@ -58,6 +58,34 @@ class PersonRepository extends Utils
           
     }
 
+    public function delete($person)
+    {
+
+        try{
+
+            $id = $person['id'];
+
+
+            $sql = "DELETE FROM pessoa WHERE id = $id;";
+            
+            $execute = $this->conexao->execute($sql);
+
+            if($execute){
+                return true;
+            }
+
+           return false; 
+                
+        }
+        catch(\Illuminate\Database\QueryException $ex){
+             
+           return false;
+        
+          }
+
+          
+    }
+
     public function update($person){
 
         try{
