@@ -20,33 +20,13 @@ $uri = explode( '/', $uri );
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
-if($requestMethod == 'OPTIONS'){
-    header($login['cod']);
-    header("Access-Control-Allow-Origin:*");
-    header("Content-Type: *");
-    header('Access-Control-Allow-Methods: POST, GET, DELETE, PUT, PATCH, OPTIONS');
-    header("Access-Control-Max-Age: 3600");
-    header('Access-Control-Allow-Credentials: true ');
-    header('Access-Control-Allow-Headers: *');
-
-    return true;
-}
-
 $endpoint = end($uri);
 switch( $endpoint) {
     case 'login':
         $auth = new AuthController();
         $input = (array) json_decode(file_get_contents('php://input'), true);
         $login = $auth->login( $input);
-        header($login['cod']);
-        header("Access-Control-Allow-Origin:*");
-        header("Content-Type: *");
-        header('Access-Control-Allow-Methods: POST, GET, DELETE, PUT, PATCH, OPTIONS');
-        header("Access-Control-Max-Age: 3600");
-        header('Access-Control-Allow-Credentials: true ');
-        header('Access-Control-Allow-Headers: *');
-
-        $data = json_encode(["message"=>$login['message'],"Token"=>$login['JWT'][0]]);
+        $data = json_encode(["message"=>$login['message'],"token"=>$login['JWT'][0]]);
         echo ($data);
         break;
       
