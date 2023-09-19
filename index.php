@@ -6,7 +6,7 @@ use crudRepositories\PersonRepository;
 
 ini_set('display_errors', 'Off');
 
-require_once __DIR__ . '\vendor\autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 header("Access-Control-Allow-Origin:*");
 header("Content-Type: *");
@@ -19,6 +19,11 @@ $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri = explode( '/', $uri );
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
+
+if($_SERVER["REQUEST_METHOD"] != "POST"){
+    return false;
+
+}
 
 $endpoint = end($uri);
 switch( $endpoint) {
