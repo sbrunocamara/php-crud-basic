@@ -29,12 +29,12 @@ switch( $endpoint) {
         $login = $auth->login( $input);
         header($login['cod']);
         header("Access-Control-Allow-Origin:*");
-header("Content-Type: application/json; charset=UTF-8");
-header('Access-Control-Allow-Methods: POST, GET, DELETE, PUT, PATCH, OPTIONS');
-header("Access-Control-Max-Age: 3600");
-header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, Access-Control-Allow-Origin");
-header('Access-Control-Allow-Credentials: true ');
-header('Access-Control-Allow-Headers: *');
+        header("Content-Type: application/json; charset=UTF-8");
+        header('Access-Control-Allow-Methods: POST, GET, DELETE, PUT, PATCH, OPTIONS');
+        header("Access-Control-Max-Age: 3600");
+        header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, Access-Control-Allow-Origin");
+        header('Access-Control-Allow-Credentials: true ');
+        header('Access-Control-Allow-Headers: *');
 
         $data = json_encode(["message"=>$login['message'],"Token"=>$login['JWT'][0]]);
         echo ($data);
