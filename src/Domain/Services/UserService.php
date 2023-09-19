@@ -6,7 +6,7 @@ use crud\UserEntity;
 use crudApplication\DefaultOutputDTO;
 use crudMiddleware\Authenticate;
 use crudRepositories\UserRepository;
-
+ini_set('display_errors', 'Off');
 class UserService
 {
 

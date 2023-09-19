@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use crudEntities\UserEntity;
 use crud\Utils;
-
+ini_set('display_errors', 'Off');
 class UserRepository extends Utils
 {
    private $mysqlConnect;

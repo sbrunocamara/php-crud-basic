@@ -7,6 +7,8 @@ use GuzzleHttp\Exception\RequestException;
 use crudEntities\UserEntity;
 use crud\Utils;
 
+ini_set('display_errors', 'Off');
+
 class PersonRepository extends Utils
 {
    private $mysqlConnect;
