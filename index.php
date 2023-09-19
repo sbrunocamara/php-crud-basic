@@ -9,7 +9,7 @@ ini_set('display_errors', 'Off');
 require_once __DIR__ . '\vendor\autoload.php';
 
 header("Access-Control-Allow-Origin:*");
-header("Content-Type: application/json; charset=UTF-8");
+header("Content-Type: *");
 header('Access-Control-Allow-Methods: POST, GET, DELETE, PUT, PATCH, OPTIONS');
 header("Access-Control-Max-Age: 3600");
 header('Access-Control-Allow-Credentials: true ');
@@ -20,6 +20,18 @@ $uri = explode( '/', $uri );
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
+if($requestMethod == 'OPTIONS'){
+    header($login['cod']);
+    header("Access-Control-Allow-Origin:*");
+    header("Content-Type: *");
+    header('Access-Control-Allow-Methods: POST, GET, DELETE, PUT, PATCH, OPTIONS');
+    header("Access-Control-Max-Age: 3600");
+    header('Access-Control-Allow-Credentials: true ');
+    header('Access-Control-Allow-Headers: *');
+
+    return true;
+}
+
 $endpoint = end($uri);
 switch( $endpoint) {
     case 'login':
@@ -28,7 +40,7 @@ switch( $endpoint) {
         $login = $auth->login( $input);
         header($login['cod']);
         header("Access-Control-Allow-Origin:*");
-        header("Content-Type: application/json; charset=UTF-8");
+        header("Content-Type: *");
         header('Access-Control-Allow-Methods: POST, GET, DELETE, PUT, PATCH, OPTIONS');
         header("Access-Control-Max-Age: 3600");
         header('Access-Control-Allow-Credentials: true ');
