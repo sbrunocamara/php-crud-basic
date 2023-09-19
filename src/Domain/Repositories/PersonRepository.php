@@ -36,8 +36,9 @@ class PersonRepository extends Utils
             $data = $person['data_nascimento'];
 
 
+
             $sql = "INSERT INTO pessoa (nome, email, telefone,data_nascimento)
-            VALUES ('$nome', $email,'$telefone','$data')";
+            VALUES ('$nome', '$email','$telefone','$data')";
             
             $execute = $this->conexao->execute($sql);
 
