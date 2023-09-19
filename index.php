@@ -93,10 +93,12 @@ switch( $endpoint) {
                     $input = (array) json_decode(file_get_contents('php://input'), true);
                     $auth = new Authenticate();
                     $tokenCheck = $auth->checkToken($input['access_token']);
-        
+                   
+
                     if(!$tokenCheck){
                         $data = json_encode(["message"=>'Não autorizado']);
                         echo ($data);
+                        break;
                     }
         
                     $personRepository = new PersonRepository();

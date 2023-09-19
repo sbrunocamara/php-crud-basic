@@ -43,7 +43,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"nome\":\"teste\",\r\n        \"email\":\"123456\",\r\n        \"data_nascimento\":\"2023-09-18\",\r\n        \"telefone\":\"123456\",\r\n        \"access_token\" : \"CI1JI6yGnhzJOIs9VcIUeIJpi5iRkINXCicb.NROZiZtCjMW2FJLwwIxJmi0W2YHQDfdbIIiYioTIjtxJypzileyiikMIb8ZJWIS3avOl64.rsYu9jUEfU-mcT9beH6N8o0nrvsB_SJVuu_kt-n3Mtk\"\r\n}\r\n\r\n    \r\n    \r\n    ",
+					"raw": "{\r\n        \"nome\":\"teste\",\r\n        \"email\":\"teste@teste.com\",\r\n        \"data_nascimento\":\"2023-09-18\",\r\n        \"telefone\":\"123456\",\r\n        \"access_token\" : \"RJVin9czybXhU6GIIsp1CIei5kIJiINcCJIO.CZykWYWTi2HIFtI0JiYIiejZjlwZlfiILwISJvQJOibdMM46WORbzpiD8aIoiN2xt3Jxym.sJBfMkskr_8tcn6neT9uvj-ouEb9-YNm_uUr30tSVUH\"\r\n}\r\n\r\n    \r\n    \r\n    ",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -73,7 +73,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"nome\":\"teste_update\",\r\n        \"email\":\"123456\",\r\n        \"data_nascimento\":\"2023-09-18\",\r\n        \"telefone\":\"123456\",\r\n        \"access_token\" : \"CI1JI6yGnhzJOIs9VcIUeIJpi5iRkINXCicb.NROZiZtCjMW2FJLwwIxJmi0W2YHQDfdbIIiYioTIjtxJypzileyiikMIb8ZJWIS3avOl64.rsYu9jUEfU-mcT9beH6N8o0nrvsB_SJVuu_kt-n3Mtk\",\r\n        \"id\" : \"1\"\r\n}\r\n\r\n    \r\n    \r\n    ",
+					"raw": "{\r\n        \"nome\":\"teste_update2\",\r\n        \"email\":\"123456\",\r\n        \"data_nascimento\":\"2023-09-18\",\r\n        \"telefone\":\"123456\",\r\n        \"access_token\" : \"CI1JI6yGnhzJOIs9VcIUeIJpi5iRkINXCicb.NROZiZtCjMW2FJLwwIxJmi0W2YHQDfdbIIiYioTIjtxJypzileyiikMIb8ZJWIS3avOl64.rsYu9jUEfU-mcT9beH6N8o0nrvsB_SJVuu_kt-n3Mtk\",\r\n        \"id\" : 4\r\n}\r\n\r\n    \r\n    \r\n    ",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -103,7 +103,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \r\n        \"access_token\" : \"CI1JI6yGnhzJOIs9VcIUeIJpi5iRkINXCicb.NROZiZtCjMW2FJLwwIxJmi0W2YHQDfdbIIiYioTIjtxJypzileyiikMIb8ZJWIS3avOl64.rsYu9jUEfU-mcT9beH6N8o0nrvsB_SJVuu_kt-n3Mtk\"\r\n}\r\n\r\n    \r\n    \r\n    ",
+					"raw": "{\r\n    \r\n        \"access_token\" : \"RJVin9czybXhU6GIIsp1CIei5kIJiINcCJIO.CZykWYWTi2HIFtI0JiYIiejZjlwZlfiILwISJvQJOibdMM46WORbzpiD8aIoiN2xt3Jxym.sJBfMkskr_8tcn6neT9uvj-ouEb9-YNm_uUr30tSVUH\"\r\n}\r\n\r\n    \r\n    \r\n    ",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -141,12 +141,12 @@
 					}
 				},
 				"url": {
-					"raw": "10.10.90.15:8080/delete",
+					"raw": "127.0.0.1:8080/delete",
 					"host": [
-						"10",
-						"10",
-						"90",
-						"15"
+						"127",
+						"0",
+						"0",
+						"1"
 					],
 					"port": "8080",
 					"path": [
