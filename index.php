@@ -26,13 +26,13 @@ switch( $endpoint) {
         $auth = new AuthController();
         $input = (array) json_decode(file_get_contents('php://input'), true);
         $login = $auth->login( $input);
+
         $data = json_encode(["message"=>$login['message'],"token"=>$login['JWT'][0]]);
         echo ($data);
         break;
       
     case 'echo':
         $input = (array) json_decode(file_get_contents('php://input'), true);
-        header('HTTP/1.1 200 OK');
         echo json_encode( $input);
         break;
 
@@ -43,7 +43,6 @@ switch( $endpoint) {
 
             if(!$tokenCheck){
                 $data = json_encode(["message"=>'Não autorizado']);
-                header('HTTP/1.1 201 Unauthorized');
                 echo ($data);
             }
 
@@ -52,14 +51,12 @@ switch( $endpoint) {
 
             if($newPerson){
                 $data = json_encode(["message"=>'Sucesso ao inserir dados']);
-                header('HTTP/1.1 200 Ok');
                 echo ($data);
                 break;
             }
 
 
             $data = json_encode(["message"=>'Erro ao incluir dados']);
-            header('HTTP/1.1 400 Bad Request');
             echo ($data);
             break;
 
@@ -70,7 +67,6 @@ switch( $endpoint) {
     
                 if(!$tokenCheck){
                     $data = json_encode(["message"=>'Não autorizado']);
-                    header('HTTP/1.1 201 Unauthorized');
                     echo ($data);
                 }
     
@@ -79,14 +75,12 @@ switch( $endpoint) {
     
                 if($newPerson){
                     $data = json_encode(["message"=>'Sucesso ao atualizar dados']);
-                    header('HTTP/1.1 200 Ok');
                     echo ($data);
                     break;
                 }
     
     
                 $data = json_encode(["message"=>'Erro ao atualizar dados']);
-                header('HTTP/1.1 400 Bad Request');
                 echo ($data);
                 break;
 
@@ -97,7 +91,6 @@ switch( $endpoint) {
         
                     if(!$tokenCheck){
                         $data = json_encode(["message"=>'Não autorizado']);
-                        header('HTTP/1.1 201 Unauthorized');
                         echo ($data);
                     }
         
@@ -106,14 +99,12 @@ switch( $endpoint) {
         
                     if($getPerson){
                         $data = json_encode(["message"=>'Sucesso ao obter lista de pessoas',"data"=>$getPerson]);
-                        header('HTTP/1.1 200 Ok');
                         echo ($data);
                         break;
                     }
         
         
                     $data = json_encode(["message"=>'Erro ao obter lista de pessoas']);
-                    header('HTTP/1.1 400 Bad Request');
                     echo ($data);
                     break;
     
