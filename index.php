@@ -2,6 +2,7 @@
 
 use crudController\AuthController;
 use crudMiddleware\Authenticate;
+use crudRepositories\FinanceiroRepository;
 use crudRepositories\PersonRepository;
 
 ini_set('display_errors', 'Off');
@@ -49,6 +50,7 @@ switch( $endpoint) {
             if(!$tokenCheck){
                 $data = json_encode(["message"=>'Não autorizado']);
                 echo ($data);
+                break;
             }
 
             $personRepository = new PersonRepository();
@@ -60,6 +62,25 @@ switch( $endpoint) {
                 break;
             }
 
+            case 'financeiro_add':
+                $input = (array) json_decode(file_get_contents('php://input'), true);
+                $auth = new Authenticate();
+                $tokenCheck = $auth->checkToken($input['access_token']);
+    
+                if(!$tokenCheck){
+                    $data = json_encode(["message"=>'Não autorizado']);
+                    echo ($data);
+                    break;
+                }
+    
+                $financeiroRepository = new FinanceiroRepository();
+                $newtittle = $financeiroRepository->create($input);
+    
+                if($newtittle){
+                    $data = json_encode(["message"=>'Sucesso ao inserir dados']);
+                    echo ($data);
+                    break;
+                }
 
             $data = json_encode(["message"=>'Erro ao incluir dados']);
             echo ($data);
@@ -73,6 +94,7 @@ switch( $endpoint) {
                 if(!$tokenCheck){
                     $data = json_encode(["message"=>'Não autorizado']);
                     echo ($data);
+                    break;
                 }
     
                 $personRepository = new PersonRepository();
@@ -88,6 +110,31 @@ switch( $endpoint) {
                 $data = json_encode(["message"=>'Erro ao atualizar dados']);
                 echo ($data);
                 break;
+
+                case 'financeiro_update':
+                    $input = (array) json_decode(file_get_contents('php://input'), true);
+                    $auth = new Authenticate();
+                    $tokenCheck = $auth->checkToken($input['access_token']);
+        
+                    if(!$tokenCheck){
+                        $data = json_encode(["message"=>'Não autorizado']);
+                        echo ($data);
+                        break;
+                    }
+        
+                    $financeiroRepository = new FinanceiroRepository();
+                    $tituloUpdate = $financeiroRepository->update($input);
+        
+                    if($tituloUpdate){
+                        $data = json_encode(["message"=>'Sucesso ao atualizar dados']);
+                        echo ($data);
+                        break;
+                    }
+        
+        
+                    $data = json_encode(["message"=>'Erro ao atualizar dados']);
+                    echo ($data);
+                    break;
 
                 case 'get':
                     $input = (array) json_decode(file_get_contents('php://input'), true);
@@ -115,6 +162,34 @@ switch( $endpoint) {
                     echo ($data);
                     break;
 
+                    case 'financeiro_get':
+                        $input = (array) json_decode(file_get_contents('php://input'), true);
+                        $auth = new Authenticate();
+                        $tokenCheck = $auth->checkToken($input['access_token']);
+                       
+    
+                        if(!$tokenCheck){
+                            $data = json_encode(["message"=>'Não autorizado']);
+                            echo ($data);
+                            break;
+                        }
+            
+                        
+                    $financeiroRepository = new FinanceiroRepository();
+                    $getTitulos = $financeiroRepository->getTittle($input);
+
+            
+                        if($getTitulos){
+                            $data = json_encode(["message"=>'Sucesso ao obter lista de titulos',"data"=>$getTitulos]);
+                            echo ($data);
+                            break;
+                        }
+            
+            
+                        $data = json_encode(["message"=>'Erro ao obter lista de titulos']);
+                        echo ($data);
+                        break;
+    
                     case 'delete':
                         $input = (array) json_decode(file_get_contents('php://input'), true);
                         $auth = new Authenticate();
@@ -123,6 +198,7 @@ switch( $endpoint) {
                         if(!$tokenCheck){
                             $data = json_encode(["message"=>'Não autorizado']);
                             echo ($data);
+                            break;
                         }
             
                         $personRepository = new PersonRepository();
@@ -138,6 +214,31 @@ switch( $endpoint) {
                         $data = json_encode(["message"=>'Erro ao atualizar dados']);
                         echo ($data);
                         break;
+
+                        case 'financeiro_delete':
+                            $input = (array) json_decode(file_get_contents('php://input'), true);
+                            $auth = new Authenticate();
+                            $tokenCheck = $auth->checkToken($input['access_token']);
+                
+                            if(!$tokenCheck){
+                                $data = json_encode(["message"=>'Não autorizado']);
+                                echo ($data);
+                                break;
+                            }
+
+                            $financeiroRepository = new FinanceiroRepository();
+                            $deleteTitulos = $financeiroRepository->delete($input);
+                
+                            if($deleteTitulos){
+                                $data = json_encode(["message"=>'Sucesso ao atualizar dados']);
+                                echo ($data);
+                                break;
+                            }
+                
+                
+                            $data = json_encode(["message"=>'Erro ao atualizar dados']);
+                            echo ($data);
+                            break;
         
     
     default:

@@ -9,5 +9,5 @@ define('BD_USR', 'root');
 
 define('BD_PASS', '698523');
 
-define('BD_BANCO_DE_DADOS','database_sistema5');
+define('BD_BANCO_DE_DADOS','prova_667255');
 
