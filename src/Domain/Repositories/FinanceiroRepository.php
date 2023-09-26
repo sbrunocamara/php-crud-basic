@@ -35,11 +35,12 @@ class FinanceiroRepository extends Utils
             $data_vencimento = $titulo['data_vencimento'];
             $data_pagamento = $titulo['data_pagamento'];
             $valor_devido = $titulo['valor_devido'];
+            $valor_pago = $titulo['valor_pago'];
 
 
 
-            $sql = "INSERT INTO financeiro (pessoa_id, data_vencimento, data_pagamento,valor_devido)
-            VALUES ('$pessoa_id', ' $data_vencimento',' $data_pagamento','$valor_devido')";
+            $sql = "INSERT INTO financeiro (pessoa_id, data_vencimento, data_pagamento,valor_devido,valor_pago)
+            VALUES ('$pessoa_id', ' $data_vencimento',' $data_pagamento','$valor_devido','$valor_pago')";
             
             $execute = $this->conexao->execute($sql);
 
@@ -96,11 +97,12 @@ class FinanceiroRepository extends Utils
             $data_vencimento = $titulo['data_vencimento'];
             $data_pagamento = $titulo['data_pagamento'];
             $valor_devido = $titulo['valor_devido'];
+            $valor_pago = $titulo['valor_pago'];
 
 
 
             $sql = "UPDATE financeiro SET 
-            pessoa_id = '$pessoa_id', data_vencimento = '$data_vencimento', data_pagamento = '$data_pagamento', valor_devido = '$valor_devido'
+            pessoa_id = '$pessoa_id', data_vencimento = '$data_vencimento', data_pagamento = '$data_pagamento', valor_devido = '$valor_devido',valor_pago = '$valor_pago'
             WHERE id = $id";
             
             $execute = $this->conexao->execute($sql);
@@ -129,7 +131,7 @@ class FinanceiroRepository extends Utils
         try{
 
 
-            $sql = "SELECT * FROM `financeiro` LEFT JOIN pessoa ON financeiro.pessoa_id = pessoa.id";
+            $sql = "SELECT financeiro.*,pessoa.nome as pessoa_nome FROM `financeiro` LEFT JOIN pessoa ON financeiro.pessoa_id = pessoa.id";
             
             $execute = $this->conexao->execute($sql);
             $titulo = $execute->getAll();

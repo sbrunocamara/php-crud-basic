@@ -73,7 +73,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"pessoa_id\":\"2\",\r\n        \"data_vencimento\":\"2023-09-05\",\r\n        \"data_pagamento\":\"2023-09-20\",\r\n        \"valor_devido\":\"1550\",\r\n        \"access_token\" : \"NCepycIhRk1VIGI5bJizcCi9iUJIIIJOnsX6.ktfxOIlI6ZjIiMMSeIWwt2WlJyY8mRiWZbiJj3iaYdCNQyw0iJpOIIZJDHz2TiLvFiobx4.v8jVTtub_UruB9S-_6nm0t-scrMseo9Hku3nUfNkEJY\"\r\n}\r\n\r\n    \r\n    \r\n    ",
+					"raw": "{\r\n        \"pessoa_id\":\"8\",\r\n        \"data_vencimento\":\"2000-02-01\",\r\n        \"data_pagamento\":\"2000-02-01\",\r\n        \"valor_devido\":\"100\",\r\n        \"access_token\" : \"NCepycIhRk1VIGI5bJizcCi9iUJIIIJOnsX6.ktfxOIlI6ZjIiMMSeIWwt2WlJyY8mRiWZbiJj3iaYdCNQyw0iJpOIIZJDHz2TiLvFiobx4.v8jVTtub_UruB9S-_6nm0t-scrMseo9Hku3nUfNkEJY\",\r\n        \"valor_pago\" :\"120\"\r\n}\r\n\r\n    \r\n  ",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -133,7 +133,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"id\" : 4,\r\n         \"pessoa_id\":\"2\",\r\n        \"data_vencimento\":\"2023-09-05\",\r\n        \"data_pagamento\":\"2023-09-20\",\r\n        \"valor_devido\":\"1550\",\r\n        \"access_token\" : \"NCepycIhRk1VIGI5bJizcCi9iUJIIIJOnsX6.ktfxOIlI6ZjIiMMSeIWwt2WlJyY8mRiWZbiJj3iaYdCNQyw0iJpOIIZJDHz2TiLvFiobx4.v8jVTtub_UruB9S-_6nm0t-scrMseo9Hku3nUfNkEJY\"\r\n}\r\n\r\n    \r\n    \r\n    ",
+					"raw": "{\r\n        \"id\" : 4,\r\n        \"pessoa_id\":\"2\",\r\n        \"data_vencimento\":\"2023-09-05\",\r\n        \"data_pagamento\":\"2023-09-20\",\r\n        \"valor_devido\":\"1550\",\r\n        \"valor_pago\" : \"1400\",\r\n        \"access_token\" : \"NCepycIhRk1VIGI5bJizcCi9iUJIIIJOnsX6.ktfxOIlI6ZjIiMMSeIWwt2WlJyY8mRiWZbiJj3iaYdCNQyw0iJpOIIZJDHz2TiLvFiobx4.v8jVTtub_UruB9S-_6nm0t-scrMseo9Hku3nUfNkEJY\"\r\n}\r\n\r\n    \r\n    \r\n    ",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -193,7 +193,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \r\n        \"access_token\" : \"RJVin9czybXhU6GIIsp1CIei5kIJiINcCJIO.CZykWYWTi2HIFtI0JiYIiejZjlwZlfiILwISJvQJOibdMM46WORbzpiD8aIoiN2xt3Jxym.sJBfMkskr_8tcn6neT9uvj-ouEb9-YNm_uUr30tSVUH\"\r\n}\r\n\r\n    \r\n    \r\n    ",
+					"raw": "{\r\n    \r\n        \"access_token\" : \"NCepycIhRk1VIGI5bJizcCi9iUJIIIJOnsX6.ktfxOIlI6ZjIiMMSeIWwt2WlJyY8mRiWZbiJj3iaYdCNQyw0iJpOIIZJDHz2TiLvFiobx4.v8jVTtub_UruB9S-_6nm0t-scrMseo9Hku3nUfNkEJY\"\r\n}\r\n\r\n    \r\n    \r\n    ",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -201,7 +201,7 @@
 					}
 				},
 				"url": {
-					"raw": "127.0.0.1:8080/get",
+					"raw": "127.0.0.1:8080/financeiro_get",
 					"host": [
 						"127",
 						"0",
@@ -210,7 +210,7 @@
 					],
 					"port": "8080",
 					"path": [
-						"get"
+						"financeiro_get"
 					]
 				}
 			},
